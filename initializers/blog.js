@@ -46,4 +46,4 @@ exports.blog = function(api, next){
   };
 
   next();
-}
+};
