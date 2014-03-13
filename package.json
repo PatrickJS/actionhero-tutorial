@@ -1,0 +1,24 @@
+ {
+  "author": "PatrickJS <github@gdi2290.com>",
+  "name": "my_actionhero_project",
+  "description": "my actionhero project",
+  "version": "0.0.1",
+  "engines": {
+    "node": "0.10.x"
+  },
+  "dependencies": {
+    "actionhero": "7.6.8",
+    "grunt": "latest"
+  },
+  "devDependencies": {
+    "mocha":  "latest",
+    "should": "latest"
+  },
+  "scripts": {
+    "help": "actionhero help",
+    "start": "actionhero start",
+    "actionhero": "actionhero",
+    "startCluster": "actionhero startCluster",
+    "test": "mocha"
+  }
+}
