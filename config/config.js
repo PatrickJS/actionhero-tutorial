@@ -12,12 +12,12 @@ var config = {};
 
 config.general = {
   apiVersion: '0.0.1',
-  serverName: 'actionhero API',
+  serverName: 'PatrickJS API',
   // id can be set here, or it will be generated dynamically.
   //  Be sure that every server you run has a unique ID (which will happen when generated dynamically)
 //  id: 'myActionHeroServer',
   // A unique token to your application that servers will use to authenticate to each other
-  serverToken: 'change-me',
+  serverToken: 'yoloswag',
   // The welcome message seen by TCP and webSocket clients upon connection
   welcomeMessage: 'Hello! Welcome to the actionhero api',
   // The body message to accompany 404 (file not found) errors regarding flat files
@@ -66,7 +66,7 @@ config.logger = {
 };
 
 // console logger
-if(cluster.isMaster){
+if (cluster.isMaster) {
   config.logger.transports.push(function(api, winston){
     return new (winston.transports.Console)({
       colorize: true,
@@ -77,10 +77,12 @@ if(cluster.isMaster){
 }
 
 // file logger
-try{
+try {
   fs.mkdirSync('./log');
 } catch(e) {
-  if (e.code != 'EEXIST') { console.log(e); process.exit(); }
+  if (e.code !== 'EEXIST') {
+    console.log(e); process.exit();
+  }
 }
 config.logger.transports.push(function(api, winston) {
   return new (winston.transports.File)({
